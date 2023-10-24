@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.Icon?>
+<?import com.gluonhq.charm.glisten.control.TextField?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" type="StackPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui3.PlanningController">
+   <children>
+      <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="29.0" layoutY="100.0" prefHeight="600.0" prefWidth="1100.0" styleClass="border-pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="45.0" prefWidth="1100.0" styleClass="semi-top-form" stylesheets="@PlanningStyle.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="-4.0" layoutY="-4.0" prefHeight="39.0" prefWidth="1124.0" styleClass="top-form" stylesheets="@PlanningStyle.css" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="-4.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="-4.0">
+                           <children>
+                              <Button layoutX="1032.0" layoutY="2.0" minWidth="37.0" mnemonicParsing="false" onAction="#close" prefHeight="36.0" prefWidth="37.0" styleClass="close" stylesheets="@PlanningStyle.css">
+                                 <graphic>
+                                    <Icon content="CLOSE" styleClass="close" stylesheets="@PlanningStyle.css" />
+                                 </graphic>
+                              </Button>
+                              <Label layoutX="47.0" layoutY="16.0" prefHeight="18.0" prefWidth="225.0" text="GYM MASTER">
+                                 <graphic>
+                                    <Icon content="STORAGE" />
+                                 </graphic>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane prefHeight="512.0" prefWidth="220.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane prefHeight="554.6666666666666" prefWidth="220.0" stylesheets="@PlanningStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Icon blendMode="COLOR_BURN" content="PERSON" layoutX="94.0" layoutY="70.0" scaleX="5.0" scaleY="5.0" stylesheets="@PlanningStyle.css">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <effect>
+                                    <Lighting>
+                                       <bumpInput>
+                                          <Shadow />
+                                       </bumpInput>
+                                       <light>
+                                          <Light.Distant>
+                                             <color>
+                                                <Color red="0.02631578966975212" green="0.022763699293136597" blue="0.01299545168876648" />
+                                             </color>
+                                          </Light.Distant>
+                                       </light>
+                                    </Lighting>
+                                 </effect></Icon>
+                              <Label layoutX="74.0" layoutY="140.0" text="Welcome !" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label contentDisplay="RIGHT" layoutX="40.0" layoutY="160.0" text="Baya Ben Madhkour" textFill="#f8f8f8">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <effect>
+                                    <Blend />
+                                 </effect>
+                                 <cursor>
+                                    <Cursor fx:constant="TEXT" />
+                                 </cursor>
+                              </Label>
+                              <Line endX="100.0" layoutX="111.0" layoutY="200.0" startX="-100.0" stroke="WHITE" />
+                              <Button fx:id="dashboard_btn" layoutX="21.0" layoutY="229.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@PlanningStyle.css" text="Dashboard" />
+                              <Button fx:id="plannifier_btn" layoutX="21.0" layoutY="277.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@PlanningStyle.css" text="Plannifier cour" />
+                              <Button fx:id="availableCour_btn" layoutX="21.0" layoutY="327.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@PlanningStyle.css" text="Cours" />
+                              <Button fx:id="logout" layoutX="21.0" layoutY="475.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="54.0" stylesheets="@PlanningStyle.css">
+                                 <graphic>
+                                    <Icon content="MOVE_TO_INBOX" prefHeight="20.0" prefWidth="39.0" stylesheets="@PlanningStyle.css" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="shadow" />
+                                    <String fx:value="logout" />
+                                 </styleClass>
+                              </Button>
+                              <Label layoutX="84.0" layoutY="483.0" text="Logout" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <styleClass>
+                              <String fx:value="nav-form" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="503.0" prefWidth="833.0" stylesheets="@PlanningStyle.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="plannifiercour_form" layoutX="104.0" layoutY="89.0" prefHeight="542.0" prefWidth="880.0" stylesheets="@PlanningStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="312.0" layoutY="14.0" prefHeight="515.0" prefWidth="550.0" stylesheets="@PlanningStyle.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TableView fx:id="plancour_tableview" layoutX="6.0" layoutY="98.0" onMouseClicked="#addCoursPlannifie" prefHeight="413.0" prefWidth="536.0" stylesheets="@PlanningStyle.css">
+                                      <columns>
+                                        <TableColumn fx:id="plannifiercour_col_idcour" prefWidth="75.0" styleClass="table" text="ID Cour" />
+                                        <TableColumn fx:id="plannifiercour_col_nomcour" prefWidth="75.0" text="Nom Cour" />
+                                          <TableColumn fx:id="plannifiercour_col_coach" prefWidth="75.0" text="Coach" />
+                                          <TableColumn fx:id="plannifiercour_col_salle" prefWidth="83.33331298828125" text="Salle" />
+                                          <TableColumn fx:id="plannifiercour_col_date" prefWidth="67.33331298828125" text="Date" />
+                                          <TableColumn fx:id="plannifiercour_col_duree" prefWidth="75.0" text="Duree" />
+                                          <TableColumn fx:id="plannifiercour_col_status" prefWidth="82.0" text="Status" />
+                                      </columns>
+                                    </TableView>
+                                    <TextField fx:id="plannifiercour_search" layoutX="146.0" layoutY="35.0" prefHeight="26.0" prefWidth="258.0" promptText="Search" styleClass="search" stylesheets="@PlanningStyle.css" />
+                                    <Icon content="SEARCH" layoutX="147.0" layoutY="38.0" />
+                                 </children></AnchorPane>
+                              <AnchorPane layoutX="15.0" layoutY="14.0" prefHeight="515.0" prefWidth="274.0" stylesheets="@PlanningStyle.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="38.0" layoutY="100.0" text="ID Cour">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="38.0" layoutY="148.0" text="Nom cour" />
+                                    <Label layoutX="38.0" layoutY="194.0" text="Salle" />
+                                    <Label layoutX="38.0" layoutY="240.0" text="Date" />
+                                    <Label layoutX="38.0" layoutY="285.0" />
+                                    <DatePicker fx:id="plannifiercour_date" layoutX="142.0" layoutY="234.0" prefHeight="30.0" prefWidth="105.0" styleClass="textfield" stylesheets="@PlanningStyle.css" />
+                                    <Button fx:id="plannifiercour_addBtn" layoutX="38.0" layoutY="410.0" mnemonicParsing="false" onAction="#addCoursPlannifi" prefHeight="35.0" prefWidth="98.0" styleClass="add-btn" stylesheets="@PlanningStyle.css" text="Ajouter" />
+                                    <Button fx:id="plannifiercour_updateBtn" layoutX="147.0" layoutY="410.0" mnemonicParsing="false" onAction="#updatecourplanifie" prefHeight="35.0" prefWidth="98.0" styleClass="update-btn" stylesheets="@PlanningStyle.css" text="Modifier" />
+                                    <Button fx:id="plannifiercour_deleteBtn" layoutX="38.0" layoutY="452.0" mnemonicParsing="false" onAction="#deletecourplanifie" prefHeight="35.0" prefWidth="98.0" styleClass="delete-btn" stylesheets="@PlanningStyle.css" text="Supprimer" />
+                                    <Button fx:id="plannifiercour_clearBtn" layoutX="146.0" layoutY="452.0" mnemonicParsing="false" onAction="#clearcourplaifie" prefHeight="35.0" prefWidth="98.0" styleClass="clear-btn" stylesheets="@PlanningStyle.css" text="Reset" />
+                                    <Label layoutX="52.0" layoutY="43.0" prefHeight="27.0" prefWidth="207.0" text="Plannifier Cour">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="plannifiercour_nomcour" layoutX="142.0" layoutY="143.0" onAction="#addCoursnomList" prefHeight="26.0" prefWidth="105.0" styleClass="textfield" stylesheets="@PlanningStyle.css" />
+                                    <TextField fx:id="plannifiercour_idcour" layoutX="142.0" layoutY="94.0" prefHeight="26.0" prefWidth="105.0" styleClass="textfield" stylesheets="@PlanningStyle.css" />
+                                    <ComboBox fx:id="plannifiercour_salle" layoutX="142.0" layoutY="191.0" onAction="#addCoursSalleList" prefHeight="26.0" prefWidth="105.0" styleClass="textfield" stylesheets="@PlanningStyle.css" />
+                                    <Label layoutX="38.0" layoutY="322.0" text="Description" />
+                                    <TextField fx:id="plannifiercour_description" layoutX="140.0" layoutY="316.0" prefHeight="29.0" prefWidth="107.0" styleClass="textfield" stylesheets="@PlanningStyle.css" />
+                                    <Label layoutX="38.0" layoutY="285.0" text="Status" />
+                                    <ComboBox fx:id="plannifiercour_status" layoutX="141.0" layoutY="280.0" onAction="#addCoursStatusList" prefHeight="26.0" prefWidth="105.0" styleClass="textfield" stylesheets="@PlanningStyle.css" />
+                                    <Label layoutX="43.0" layoutY="360.0" text="Coach" />
+                                    <TextField fx:id="plannifiercour_coach" layoutX="140.0" layoutY="354.0" prefHeight="29.0" prefWidth="107.0" styleClass="textfield" stylesheets="@PlanningStyle.css" />
+                                 </children></AnchorPane>
+                              <Separator layoutX="297.0" layoutY="21.0" orientation="VERTICAL" prefHeight="498.0" prefWidth="5.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="availableCour_form" prefHeight="545.0" prefWidth="880.0" stylesheets="@PlanningStyle.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="14.0" layoutY="20.0" prefHeight="523.0" prefWidth="848.0" stylesheets="@PlanningStyle.css">
+                                 <styleClass>
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <AnchorPane layoutX="334.0" layoutY="24.0" prefHeight="469.0" prefWidth="502.0" stylesheets="@PlanningStyle.css">
+                                       <styleClass>
+                                          <String fx:value="shadow" />
+                                          <String fx:value="white-bg" />
+                                       </styleClass>
+                                       <children>
+                                          <TableView fx:id="availableCour_tableView" layoutX="51.0" layoutY="84.0" onMouseClicked="#availableCourSelect" prefHeight="348.0" prefWidth="406.0">
+                                            <columns>
+                                              <TableColumn fx:id="availableCour_col_cour" prefWidth="141.0" text="Cour" />
+                                              <TableColumn fx:id="availableCour_col_description" prefWidth="159.0" text="Description" />
+                                                <TableColumn fx:id="availableCour_col_status" prefWidth="104.0" text="Status" />
+                                            </columns>
+                                          </TableView>
+                                          <TextField layoutX="118.0" layoutY="34.0" prefHeight="32.0" prefWidth="230.0" promptText="search" styleClass="search" stylesheets="@PlanningStyle.css" />
+                                          <Icon content="SEARCH" layoutX="126.0" layoutY="37.0" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="35.0" layoutY="24.0" prefHeight="469.0" prefWidth="272.0" stylesheets="@PlanningStyle.css">
+                                       <styleClass>
+                                          <String fx:value="shadow" />
+                                          <String fx:value="white-bg" />
+                                       </styleClass>
+                                       <children>
+                                          <Label layoutX="38.0" layoutY="100.0" text="Cour" />
+                                          <Label layoutX="38.0" layoutY="167.0" text="Description" />
+                                          <TextField fx:id="availableCour_cour" layoutX="122.0" layoutY="97.0" prefHeight="26.0" prefWidth="111.0" styleClass="textfield" stylesheets="@PlanningStyle.css" />
+                                          <TextField fx:id="availableCour_description" layoutX="122.0" layoutY="164.0" prefHeight="26.0" prefWidth="114.0" styleClass="textfield" stylesheets="@PlanningStyle.css" />
+                                          <Button fx:id="availableCour_addBtn" layoutX="30.0" layoutY="305.0" mnemonicParsing="false" onAction="#availableCourAdd" prefHeight="41.0" prefWidth="87.0" styleClass="add-btn" stylesheets="@PlanningStyle.css" text="Ajouter" />
+                                          <Button fx:id="availableCour_updateBtn" layoutX="145.0" layoutY="305.0" mnemonicParsing="false" onAction="#availableCourUpdate" prefHeight="41.0" prefWidth="87.0" styleClass="update-btn" text="Modifier" />
+                                          <Button fx:id="availableCour_clearBtn" layoutX="147.0" layoutY="362.0" mnemonicParsing="false" onAction="#availableCourClear" prefHeight="41.0" prefWidth="87.0" styleClass="clear-btn" text="Clear" />
+                                          <Button fx:id="availableCour_form_deleteBtn" layoutX="30.0" layoutY="362.0" mnemonicParsing="false" onAction="#availableCourDelete" prefHeight="41.0" prefWidth="87.0" styleClass="delete-btn" text="Delete" />
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="reservationcour_form" layoutX="70.0" layoutY="88.0" prefHeight="545.0" prefWidth="880.0" stylesheets="@PlanningStyle.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="12.0" layoutY="21.0" prefHeight="257.0" prefWidth="858.0" stylesheets="@PlanningStyle.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="30.0" layoutY="108.0" text="Id reserv" />
+                                    <Label layoutX="30.0" layoutY="162.0" text="Nom cour" />
+                                    <Label layoutX="267.0" layoutY="110.0" text="Coach" />
+                                    <Label layoutX="267.0" layoutY="162.0" text="Status" />
+                                    <Label layoutX="499.0" layoutY="163.0" text="Date" />
+                                    <Label layoutX="30.0" layoutY="206.0" text="Description" />
+                                    <Label layoutX="494.0" layoutY="111.0" text="Salle" />
+                                    <TextField fx:id="listcour_idcour" layoutX="118.0" layoutY="104.0" prefHeight="26.0" prefWidth="99.0" styleClass="textfield" stylesheets="@PlanningStyle.css" />
+                                    <DatePicker fx:id="listcour_date" layoutX="557.0" layoutY="154.0" prefHeight="26.0" prefWidth="99.0" styleClass="textfield" stylesheets="@PlanningStyle.css" />
+                                    <ComboBox fx:id="listcour_coach" layoutX="334.0" layoutY="104.0" prefHeight="26.0" prefWidth="99.0" styleClass="textfield" />
+                                    <ComboBox fx:id="listcour_salle" layoutX="557.0" layoutY="99.0" prefHeight="26.0" prefWidth="99.0" styleClass="textfield" stylesheets="@PlanningStyle.css" />
+                                    <Button fx:id="listcour_addBtn" layoutX="740.0" layoutY="91.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="88.0" styleClass="update-btn" stylesheets="@PlanningStyle.css" text="Modifier" />
+                                    <Button fx:id="listcour_resetBtn" layoutX="740.0" layoutY="144.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="88.0" styleClass="delete-btn" stylesheets="@PlanningStyle.css" text="Delete" />
+                                    <ComboBox fx:id="listcour_cour" layoutX="118.0" layoutY="154.0" onAction="#resNomcourList" prefHeight="26.0" prefWidth="99.0" styleClass="textfield" />
+                                    <Label layoutX="48.0" layoutY="40.0" text="Reserver Cour">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="listcour_description" layoutX="118.0" layoutY="198.0" prefHeight="30.0" prefWidth="102.0" styleClass="textfield" stylesheets="@PlanningStyle.css" />
+                                    <ComboBox fx:id="listcour_status" layoutX="335.0" layoutY="155.0" onAction="#resStatusList" prefHeight="26.0" prefWidth="99.0" styleClass="textfield" />
+                                    <Button fx:id="listcour_resetBtn1" layoutX="740.0" layoutY="40.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="88.0" styleClass="add-btn" stylesheets="@PlanningStyle.css" text="Ajouter" />
+                                    <Button fx:id="listcour_resetBtn2" layoutX="740.0" layoutY="195.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="88.0" styleClass="clear-btn" stylesheets="@PlanningStyle.css" text="Reset" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="11.0" layoutY="292.0" prefHeight="249.0" prefWidth="861.0" stylesheets="@PlanningStyle.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TableView fx:id="listcour_tableView" layoutX="37.0" layoutY="79.0" prefHeight="142.0" prefWidth="786.0">
+                                      <columns>
+                                        <TableColumn fx:id="listcour_col_idcour" prefWidth="97.9998779296875" text="Id resv" />
+                                        <TableColumn fx:id="listcour_col_nomcour" prefWidth="108.33331298828125" text="Nom cour" />
+                                          <TableColumn fx:id="listcour_col_coach" prefWidth="83.66668701171875" text="Coach" />
+                                          <TableColumn fx:id="listcour_col_status" prefWidth="96.33331298828125" text="Status" />
+                                          <TableColumn fx:id="listcour_col_description" prefWidth="121.3333740234375" text="Description" />
+                                          <TableColumn fx:id="listcour_col_date" prefWidth="121.66668701171875" text="Date" />
+                                          <TableColumn fx:id="listcour_col_salle" prefWidth="158.33331298828125" text="Salle" />
+                                      </columns>
+                                    </TableView>
+                                    <TextField fx:id="listcour_search" layoutX="172.0" layoutY="23.0" prefHeight="32.0" prefWidth="284.0" promptText="search" styleClass="search" stylesheets="@PlanningStyle.css" />
+                                    <Icon content="SEARCH" layoutX="176.0" layoutY="25.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="dashboard_form" layoutX="4.0" layoutY="-8.0" prefHeight="551.3333333333334" prefWidth="880.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="25.0" layoutY="18.0" prefHeight="163.0" prefWidth="822.0" stylesheets="@PlanningStyle.css">
+                                 <styleClass>
+                                    <String fx:value="nav-form" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="105.0" layoutY="73.0" text="Total Cour :" textFill="WHITE">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="dashboard_totalcour" layoutX="268.0" layoutY="73.0" prefHeight="34.0" prefWidth="299.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="29.0" layoutY="221.0" prefHeight="300.0" prefWidth="817.0" stylesheets="@PlanningStyle.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <BarChart fx:id="dashboard_barchart" layoutX="67.0" layoutY="19.0" prefHeight="319.3333333333333" prefWidth="817.3333333333334" title="Cour plannifie" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </BarChart>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children></AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</fx:root>
